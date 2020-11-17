@@ -13,13 +13,33 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        <p id="demo"></p>
+        <p>Por favor introduzca un valor entre 5 y 10:</p>
+        <input id="demo" type="text">
+        <button type="button" onclick="miFuncion()">Testeo Valor</button>
+        <p id="p"></p>
+
         <script>
-            document.getElementById("demo").innerHTML="Hola Mundo"
+            
+            function miFuncion(){
+                var mensaje,x;
+                mensaje=document.getElementById("p");
+                mensaje.innerHTML="";
+                x=document.getElementById("demo").value;
+
+                try {
+                if( x == "") throw "Vacio";
+                if (isNaN(x)) throw "No es un numero";
+                x = Number(x)   
+                if (x<5) throw "Es menor que 5";
+                if (x>10) throw "Es mayor que 10";
+                } 
+             
+                catch (err) {
+                mensaje.innerHTML="Error en input: " + err;
+                }
+            }
+
         </script>
-        <script src="app.js" async defer></script>
+
     </body>
 </html>
