@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>11-String-Methods</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <p id="demo"></p>
+
+        <script>
+            
+            var x = "Este string es nuestra base string de trabajo"
+            
+            //indexOf: Tipo INSTR de VBA - Cuenta desde la izq
+            var y = x.indexOf("string")
+            
+            //lastIndexOf : Tipo INSTRREV -  Cuenta desde la izq
+            var m = x.lastindexOf("string")
+            
+            //search: INSTR de VBA no acepta segundo parametro de posicion pero si acepta parametros de busqueda
+            var d = x.search("string")
+            
+            //slice: Rebanada, corta un pedazo Similar al MID de VBA con parametros Desde hasta
+            // se puede rebanar desde adelante para atras con parametros negativos
+            var f = x.slice(0,10)
+
+            //subString: Igual a MID, maneja negativos
+            var t = x.substr(15)
+
+            //substr
+            var j = x.substr(5,5)
+            //replace: Igual a VBA pero solo reemplaza una vez, la primera, es case sensitive
+            var w = x.replace("string","zapato")
+
+            //f=x.replace(/string/g,"zapato");
+
+            //toUpperCase
+            //toLowerCase
+            //concat
+            //trim
+            //charAt
+            //split
+
+            document.getElementById("demo").innerHTML= y 
+
+        </script>
+        
+    </body>
+</html>
