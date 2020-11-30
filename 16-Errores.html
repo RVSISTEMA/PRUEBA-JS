@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Errores</title>
+</head>
+<body>
+    <p>Por favor introduzca un valor del 1 al 10:</p>
+    
+    <input id="demo" type="text">
+
+    <button type="button" onclick="miFuncion()">Testeo Input</button>
+
+    <p id="p"></p>
+
+    <script>
+
+        function miFuncion(){
+            var mensaje,x;
+            mensaje=document.getElementById("p");
+            mensaje.innerhtml="";
+            x=document.getElementById("demo").value;
+            
+            try{
+                if (x == "") throw "vacio";
+                if (isNaN(x)) throw "no es un numero";
+                if (x<5) throw "Es menor que 5";
+                if (x > 10) throw "Es mayor que 10!"
+
+            }
+
+            catch(err){
+                mensaje.innerHTML="Error en input: " + err
+
+            }
+        }
+    </script>
+
+</body>
+</html>
