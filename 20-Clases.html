@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clases</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        class Auto{
+
+            constructor(puertas,maxVelocidad){
+                this.ruedas=4;
+                this.volante=1;
+                this.ruedas=4;
+                this.asientos=4;
+                this.puertas=puertas;
+                this.maxVelocidad=maxVelocidad;
+            }
+            velocidad(){
+                return "Mi maxima Velocidad es " + this.maxVelocidad;
+            }
+
+            static tipo(){
+                return "este metodo solo puede ser utilizado dentro de la clase"
+            }
+
+            set set_puertas(x){
+                this.puertas=x;
+            }
+
+            get get_puertas(){
+                return this.puertas;
+            }
+               
+        }
+        //miAuto=new Auto(5,159);
+        class Ford extends Auto{
+            constructor(puertas,maxVelocidad,modelo) {
+                //Ejecutamos el constructor de la clase padre Auto
+                super(puertas,maxVelocidad);
+                
+                this.modelo=modelo;
+            }
+            presentacion(){
+                return "este modelo "+  this.modelo + ", Es el nuevo lanzamientode Ford"
+            }
+        }
+
+        miAuto=new Ford(5,159,"Ka");
+
+        miAuto.set_puertas=5
+
+        //document.getElementById("demo").innerHTML=miAuto.presentacion()
+        document.getElementById("demo").innerHTML=miAuto.get_puertas
+
+    </script>
+</body>
+</html>,maxVelocmaxVelocidadd;

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        var arr=["Ruben","Villa",52]
+        var text="";
+        var i;
+
+        for (i=0;i<arr.length;i++){
+            text+=arr[i]+"<br>";
+            
+        }
+        var persona={nombre:"Ruben",apellido:"Villa",edad:52}
+        var text_2=""
+
+        for (x in persona) {
+            text_2+= persona[x]+" "
+        }
+        document.getElementById("demo").innerHTML=text_2
+
+        for (x of arr){
+            document.write(x+"<br>")
+        }
+        
+        i=0;
+        while(i<10){
+            document.write("El Nro.es:" + i + "<br>")
+            i++
+        }
+        i=9;
+        do{
+            document.write("El Nro.es:" + i + "<br>")
+            i--
+        }while(i>=0)
+        
+
+
+    </script>
+</body>
+</html>

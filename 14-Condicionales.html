@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionales</title>
+</head>
+<body>
+    <p id="demo"></p>
+
+   <script>
+       var email_1="cam@gmail.com"
+       var email_2="rocky.com"
+       //if
+       function validador(email_3) {
+           var f=email_3.search("@")
+           var g=email_3.search(".com")
+           if((f!=-1)&&(g!=-1)){
+                return "Es un email valido"
+           }
+           // else if
+           else if (f!=-1){
+               return "Falta el @"
+           }
+           else if (g!=-1){
+                return "Falta el .com"
+           }
+           
+            //else
+            else {                
+                return "No es un email valido"
+            }
+                
+       }
+       //Switch
+       var d = ""
+       switch(new Date().getDay()) {
+           case 0:
+            d="Domingo";
+            break;
+           case 1:
+            d="Lunes";
+            break;
+           case 2:
+            d="Martes";
+            break;
+           case 3:
+            d="Miercoles";
+            break;
+           default:
+            d="Otro dia";
+        }
+
+       document.getElementById("demo").innerHTML =d
+   </script>
+</html>
