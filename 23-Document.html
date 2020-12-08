@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fondo{
+            width: 400px;
+            height: 450px;
+            position: relative;
+            background: yellow;
+        }
+        .bola{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            background: blue;
+
+        }
+    </style>
+</head>
+<body>
+    <p id="p" align="center" style="background-color: aqua;">Contenido de la Etiqueta</p>
+    
+    <button id="btnAlign" onclick="CambioAlign()">Cambiar Alineacion</button>
+    
+    <div id="alfa">
+        <p id="ToReplace">Este elemento se va a reemplazar</p>
+    </div>
+        
+    <button Id="crear" onclick="Crear()">Crear</button>
+    
+    <button id="btnReemplazar" onclick="Reemplazar()">Reemplazar</button>
+    
+    <button Id="btnBorrar" onclick="Borrar()">Borrar</button>
+
+    <div id="ani">
+        <div id="fondo" class="fondo">
+            <div id="bola" class="bola">
+
+            </div>
+        </div>        
+        <button id="dispararAnimacion">Disparar Animacion</button>
+    </div>
+
+    
+    <script>
+
+        CambioAlign=()=>{
+            let p=document.getElementById("p");
+            if (p.align=="center"){
+                p.align="left";
+            }     
+        
+            else if (p.align=="left"){
+                p.align="center";
+            }
+            if (p.style.backgroundColor=="aqua"){
+                p.style.backgroundColor="red";
+            }     
+        
+            else if (p.style.backgroundColor=="red"){
+                p.style.backgroundColor="aqua";
+
+            }
+        }
+
+        let p=document.getElementById("p").innerHTML
+        console.log(p);
+        //TOmamos le elemendo div Alfa para meter jugar con un elemento adentro
+        let f=document.getElementById("alfa")
+
+        Crear=()=>{
+            //Creamos un elemento boton
+            let g=document.createElement("BUTTON");
+            g.innerHTML="Boton Creado";
+
+            //Ahora se lo agregamos al Div Alfa
+            f.appendChild(g);
+
+        } 
+        //-------------------------------------------------
+        Reemplazar=()=>{
+            //Tomamos el p ToReplace para Jugar reemmplazarlo 
+            let d=document.getElementById("ToReplace");
+            //Creamos un Parrafo que va a reemplazar al que ya existe
+            let h=document.createElement("p");
+            h.id="NuevoP"
+            h.innerHTML="Este es el nuevo elemento";
+            //Ahora reemplazamos al Div por un Parrafo 
+
+            f.replaceChild(h,d);
+
+        }
+        //--------------------------------------------------
+        Borrar=()=>{
+            let y=document.getElementById("NuevoP");
+            f.removeChild(y);
+
+        }
+
+        //-------------------------------------------------
+
+        Animacion=()=>{
+            let bola=document.getElementById("bola");
+            let posX=0;
+            let posY=0;
+            let haciaDerecha=true;
+            let haciaAbajo=true;
+            let timer=setInterval(Movimiento,5);
+
+            function Movimiento(){
+                if(haciaDerecha==true){
+                    posX++;
+                    bola.style.marginLeft=posX+"px";
+                    if(posX==450){
+                        haciaDerecha=false;
+                    }
+                    if(haciaAbajo==true){
+                        posY++;
+                        bola.style.marginTop=posy+"px";
+                        if (posY==400){
+                            haciaAbajo=false;
+                        }
+                    else{
+                        posY--;
+                        bola.style.marginTop=posY+"px";
+                        if (posY==0){
+                            haciaAbajo=true;
+                        }
+                    }
+                    }
+                else {
+                    posX--;
+                    bola.style.marginLeft=posX+"px";
+                    if(posX==0){
+                        haciaDerecha=true;
+
+                    }
+                    if(haciaAbajo==true){
+                        posY++;
+                        bola.style.margintop=posY+"px";
+                        if(posY==400){
+                            haciaAbajo=false;
+
+                        }
+                    else{
+                        posY--;
+                        bola.style.marginTop=posY+"px";
+                        if (posY==0){
+                            haciaAbajo=true;
+
+                        }
+                    }
+                    }
+
+                }
+                
+                }
+            }
+        }
+        let btnAnimacion=document.getElementById("dispararAnimacion");
+        btnAnimacion.onclick=Animacion
+
+
+
+    </script>
+</body>
+</html>
