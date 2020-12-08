@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows</title>
+</head>
+<body>
+    <button id="btnCerrar" onclick="Cerrar()">Cerrar Window</button>
+    <button id="btnAbrir" onclick="Abrir()">Abrir Window</button>
+    <button id="btnAbrir" onclick="Mover()">Mover Pestaña</button>
+    <button id="btnNuevo" onclick="Nuevo()">Nuevo Tamaño</button>   
+    
+    <script>
+        Cerrar=()=>{
+            window.close;
+        
+        }
+
+        Abrir=()=>{
+            miPestana=window.open("","MiPestaña","with=200, heigth=100");
+
+        }
+
+        Mover=()=>{
+            miPestana.moveto(500,100);
+            miPestana.focus();
+        }
+
+        Nuevo=()=>{
+            miPestana.resizeto(200,100);
+        
+        }
+
+    </script>
+</body>
+
+</html>
